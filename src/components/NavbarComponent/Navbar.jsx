@@ -23,9 +23,6 @@ export default function Navbar(){
                         <li className='nav-item'>
                             <Link className='nav-links' to="/monsters" onClick={closeMobileMenu}>Home</Link>
                         </li>
-                        {/* <li>
-                            <Link to="/about">About</Link>
-                        </li> */}
                     </ul>
             </nav>
         </>

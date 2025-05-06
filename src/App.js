@@ -12,7 +12,6 @@ export default function App() {
           <Route path="/" element={<Layout/>}>
             <Route path="monsters/:id" element={<MonsterDetails/>} />
             <Route path="monsters" element={<MonstersList/>} />
-            {/* <Route path="about" element={<About/>} */}
           </Route>
         </Routes>
     </Router>
