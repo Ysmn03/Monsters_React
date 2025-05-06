@@ -25,24 +25,27 @@ export default function MonsterDetails(){
         }
         fetchData();
     },[id]);
+    const CleanImage=(url)=>{
+      if(url?.startsWith('data'))
+          return 'https://static.thenounproject.com/png/4653780-200.png'
+      return url?.split('.png')[0] + '.png';
+    };
     return(
     <div className="details">
-      <Link to="/" className="back-button">
-        ← Back to List
-      </Link>
+      
       <div className="header">
         <h1>{monster?.name}</h1>
         <div className='elements'>
             {
                 monster?.elements?.map((x,index)=>(
-                    <img key={index} src={x.image.split('.png')[0] + '.png'} alt={x.type} title={x.type} />
+                    <img key={index} src={CleanImage(x.image)} alt={x.type} title={x.type} />
                 ))
             }
         </div>
       </div>
       
       <div className="content">
-        <img src={monster?.image.split('.png')[0] + '.png'} alt={monster?.name} />
+        <img src={CleanImage(monster?.image)} alt={monster?.name} />
         
         <div className="stats">
           <h2>Stats</h2>
@@ -70,7 +73,7 @@ export default function MonsterDetails(){
             <h2>Weakness</h2>
             {
                 monster?.weakness?.map((x,index)=>(
-                    <img key={index} src={x.image.split('.png')[0] + '.png'} alt={x.type} title={x.type} />
+                    <img key={index} src={CleanImage(x?.image)} alt={x.type} title={x.type} />
                 ))
             }
           </div>
@@ -78,12 +81,15 @@ export default function MonsterDetails(){
             <h2>Resistence</h2>
             {
                 monster?.resistence?.map((x,index)=>(
-                    <img key={index} src={x.image.split('.png')[0] + '.png'} alt={x.type} title={x.type} />
+                    <img key={index} src={CleanImage(x?.image)} alt={x.type} title={x.type} />
                 ))
             }
           </div>
 
         </div>
+        <Link to="/monsters" className="back-button">
+          ← Back to List
+        </Link>
       </div>
     </div>
     )

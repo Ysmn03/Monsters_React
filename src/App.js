@@ -10,7 +10,7 @@ export default function App() {
       <div className="App">
         <Routes>
           <Route path="monsters/:id" element={<MonsterDetails/>} />
-          <Route path="" element={<MonstersList/>} />
+          <Route path="monsters" element={<MonstersList/>} />
         </Routes>
       </div>
     </Router>

@@ -87,3 +87,22 @@ h1 {
 .learn-more-btn:hover {
   background-color: #388e3c;
 }
+.pagination {
+  text-align: center;
+  margin: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
